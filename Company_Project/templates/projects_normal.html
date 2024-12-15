@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Projects</title>
+    <style>
+        /* Navbar styling */
+        .navbar {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        /* Page layout */
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Table styling */
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        table th, table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        table th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Button and link styling */
+        a, button {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover, button:hover {
+            color: #45a049;
+        }
+        .action-link {
+            display: inline-block;
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .action-link:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Projects</h1>
+    </div>
+
+    <a href="{{ url_for('index') }}" class="action-link">⬅ Back to Dashboard</a>
+
+    <table>
+        <tr>
+            <th>Project Number</th>
+            <th>Project Name</th>
+            <th>Location</th>
+            <th>Department Number</th>
+        </tr>
+        {% for project in projects %}
+        <tr>
+            <td>{{ project[0] }}</td>
+            <td>{{ project[1] }}</td>
+            <td>{{ project[2] }}</td>
+            <td>{{ project[3] }}</td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+

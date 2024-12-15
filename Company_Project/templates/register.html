@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        
+        table {
+            width: 20%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Register</h2>
+    <form action="{{ url_for('register') }}" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <table>
+            <tr>
+                <th>Valid Roles</th>
+            </tr>
+            {% for row in roleview %}
+            <tr>
+                <td>{{ row[0] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <br>
+
+        <label for="role">Role:</label>
+        <input type="role" id="role" name="role" required><br><br>
+
+        <table>
+            <tr>
+                <th>Valid Department</th>
+            </tr>
+            {% for row in departmentview %}
+            <tr>
+                <td>{{ row[0] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <br>
+
+        <label for="department_id">Department Id:</label>
+        <input type="department_id" id="department_id" name="department_id" required><br><br>
+        
+        <button type="submit">Register</button>
+    </form>
+
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a>.</p>
+</body>
+</html>

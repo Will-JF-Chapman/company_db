@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Update Role Name</title>
+</head>
+<body>
+    <h1>Update Role for Role: {{ role[0] }} Name: {{ role[1] }}</h1>
+    <form method="post">
+        <label for="role_name">New Role Name:</label>
+        <input name="role_name" value="{{ role[1] }}" required>
+        <input type="submit" value="Update">
+    </form>
+    <a href="{{ url_for('index') }}">Back to Employee Directory</a>
+</body>
+</html>
+

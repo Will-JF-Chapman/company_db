@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Employees</title>
+</head>
+<body>
+    <h1>Employee Directory</h1>
+    <a href="{{ url_for('index') }}">Back to Dashboard</a>
+    <table border="1">
+        <tr>
+            <th>SSN</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Salary</th>
+            <th>Department Number</th>
+        </tr>
+        {% for employee in employees %}
+        <tr>
+            <td>{{ employee[0] }}</td>
+            <td>{{ employee[1] }}</td>
+            <td>{{ employee[2] }}</td>
+            <td>{{ employee[3] }}</td>
+            <td>{{ employee[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+

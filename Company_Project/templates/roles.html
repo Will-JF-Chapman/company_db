@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Roles</title>
+</head>
+<body>
+    <h1>List of Roles</h1>
+    <a href="{{ url_for('index') }}">Back to Dashboard</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Role Name</th>
+        </tr>
+        {% for role in roles %}
+        <tr>
+            <td>{{ role[0] }}</td>
+            <td>{{ role[1] }}</td>
+            <td><a href="{{ url_for('update_role_name', id=role[0]) }}">Update Role Name</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+
